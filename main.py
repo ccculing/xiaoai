@@ -142,6 +142,8 @@ def nodered():
             '米奇妙妙屋':'5da89fc8f1ee0da5a4d97214b4fae6a8',
             '红小豆':'a34fe2c3a0325b6013972299d5b55c15',
             '宝贝赳赳':'1a9f81fa573cd1693df544c665487bb7',
+            '汪汪队':'c35e6967513714db10d5dfa9d488759d',
+            '天线宝宝':'62cdce820ced050b162dd3fffe7f8ae9',
         }
         def is_pinyin_match(target, keyword):
             """检查target的拼音是否为keyword拼音的子序列"""
