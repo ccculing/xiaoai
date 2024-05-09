@@ -54,7 +54,7 @@ def nodered():
         ac=Actions(page)
 
         #全屏
-        # page.set.window.full()
+        page.set.window.full()
 
         # TODO 检查是否有其他标签页，如果有，则关闭
         
@@ -81,6 +81,8 @@ def nodered():
 
         #播放
         page.get(url:=data["links"][new_index])
+        #全屏
+        page.set.window.full()
         
         # TODO 检查是否有其他标签页，如果有，则关闭
         
@@ -106,6 +108,8 @@ def nodered():
             
         #播放
         page.get(url:=data["links"][new_index])
+        #全屏
+        page.set.window.full()
 
         # TODO 检查是否有其他标签页，如果有，则关闭
     
@@ -115,6 +119,8 @@ def nodered():
         page=WebPage(chromium_options=co)
         page.new_tab('http://192.168.2.168:8096/web/index.html#!/tv.html?topParentId=54e2f5a65fcc052ea18327d63079be5a')
         page.get_tab(2).close()
+        #全屏
+        page.set.window.full()
         # TODO 检查是否有其他标签页，如果有，则关闭
 
 
@@ -155,6 +161,8 @@ def nodered():
                 page.new_tab(url)
                 page.get_tab(2).close()
                 page.get_tab().actions.click(on_ele='tag:button@@class=button-flat btnShuffle detailButton emby-button')
+                #全屏
+                page.set.window.full()
                 # TODO 检查是否有其他标签页，如果有，则关闭
 
         # 播放动画主逻辑
