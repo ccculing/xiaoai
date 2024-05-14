@@ -185,4 +185,4 @@ def nodered():
 # 当脚本直接运行时，启动Flask应用
 if __name__ == "__main__":
     # 在所有网络接口上运行应用程序，开启调试模式，指定端口为250
-    app.run('0.0.0.0', debug=True, port=250)
+    app.run('0.0.0.0', debug=True, port=5001)
