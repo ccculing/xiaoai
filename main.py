@@ -1,7 +1,8 @@
-from DrissionPage import ChromiumPage
+from DrissionPage import ChromiumPage, ChromiumOptions
 
-page = ChromiumPage()
-page.get('http://DrissionPage.cn')
+co = ChromiumOptions().auto_port()
+page1 = ChromiumPage(co)
+page1.get('http://DrissionPage.cn')
 
 
 
