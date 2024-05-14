@@ -9,9 +9,6 @@ import keyboard
 from pypinyin import lazy_pinyin
 from DrissionPage import ChromiumOptions
 
-
-co = ChromiumOptions()
-co.set_argument('--start-fullscreen')
 # 创建Flask应用实例
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -48,13 +45,13 @@ def nodered():
             data = json.load(file)
 
         #默认播放第一个链接
-        page=WebPage(chromium_options=co)
+        page=WebPage()
         index=data['current_index']
         page.get(url:=data["links"][index])
         ac=Actions(page)
 
         #全屏
-        page.set.window.full()
+        
 
         # TODO 检查是否有其他标签页，如果有，则关闭
         
@@ -66,7 +63,7 @@ def nodered():
         with open('results.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
 
-        page=WebPage(chromium_options=co)
+        page=WebPage()
 
         #修改序列号
         index=data['current_index']
@@ -81,8 +78,8 @@ def nodered():
 
         #播放
         page.get(url:=data["links"][new_index])
-        #全屏
-        page.set.window.full()
+        # #全屏
+        # 
         
         # TODO 检查是否有其他标签页，如果有，则关闭
         
@@ -93,7 +90,7 @@ def nodered():
         with open('results.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
 
-        page=WebPage(chromium_options=co)
+        page=WebPage()
 
         #修改序列号
         index=data['current_index']
@@ -109,18 +106,18 @@ def nodered():
         #播放
         page.get(url:=data["links"][new_index])
         #全屏
-        page.set.window.full()
+        
 
         # TODO 检查是否有其他标签页，如果有，则关闭
     
 
     #返回主页面
     elif action == 'close':
-        page=WebPage(chromium_options=co)
+        page=WebPage()
         page.new_tab('http://192.168.2.168:8096/web/index.html#!/tv.html?topParentId=54e2f5a65fcc052ea18327d63079be5a')
         page.get_tab(2).close()
         #全屏
-        page.set.window.full()
+        
         # TODO 检查是否有其他标签页，如果有，则关闭
 
 
@@ -164,7 +161,7 @@ def nodered():
                 page.get_tab(2).close()
                 page.get_tab().actions.click(on_ele='tag:button@@class=button-flat btnShuffle detailButton emby-button')
                 #全屏
-                page.set.window.full()
+                
                 # TODO 检查是否有其他标签页，如果有，则关闭
 
         # 播放动画主逻辑
