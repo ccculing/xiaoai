@@ -20,7 +20,7 @@ json_results = {"current_index":0}
 # # 定义路由'/nodered'，接受GET和POST请求
 @app.route('/nodered', methods=['GET', 'POST'])
 
-co = ChromiumOptions().auto_port()
+# co = ChromiumOptions().auto_port()
 
 def nodered():
 #     # 从请求参数中获取关键词
@@ -45,7 +45,7 @@ def nodered():
             data = json.load(file)
 
         #默认播放第一个链接
-        page=WebPage(co)
+        page=WebPage()
         index=data['current_index']
         page.get(url:=data["links"][index])
         ac=Actions(page)
@@ -63,7 +63,7 @@ def nodered():
         with open('results.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
 
-        page=WebPage(co)
+        page=WebPage()
 
         #修改序列号
         index=data['current_index']
@@ -90,7 +90,7 @@ def nodered():
         with open('results.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
 
-        page=WebPage(co)
+        page=WebPage()
 
         #修改序列号
         index=data['current_index']
@@ -113,7 +113,7 @@ def nodered():
 
     #返回主页面
     elif action == 'close':
-        page=WebPage(co)
+        page=WebPage()
         page.set.window.full()
         page.new_tab('http://192.168.2.168:8096/web/index.html#!/tv.html?topParentId=54e2f5a65fcc052ea18327d63079be5a')
         page.get_tab(2).close()
@@ -157,7 +157,7 @@ def nodered():
             animation_id = animation_mapping.get(animation_name)
             if animation_id:
                 url = f'http://192.168.2.168:8096/web/index.html#!/details?id={animation_id}&context=tvshows&serverId=49f9428a7b8e400cbd00fdc7703341dc'
-                page = WebPage(co)
+                page = WebPage()
                 page.set.window.full()
                 page.new_tab(url)
                 page.get_tab(2).close()
