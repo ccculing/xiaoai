@@ -157,6 +157,7 @@ def nodered():
             if animation_id:
                 url = f'http://192.168.2.168:8096/web/index.html#!/details?id={animation_id}&context=tvshows&serverId=49f9428a7b8e400cbd00fdc7703341dc'
                 page = WebPage()
+                page.set.window.full()
                 page.new_tab(url)
                 page.get_tab(2).close()
                 page.get_tab().actions.click(on_ele='tag:button@@class=button-flat btnShuffle detailButton emby-button')
