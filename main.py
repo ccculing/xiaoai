@@ -51,7 +51,7 @@ def nodered():
         ac=Actions(page)
 
         #全屏
-        
+        page.set.window.full()
 
         # TODO 检查是否有其他标签页，如果有，则关闭
         
@@ -79,7 +79,7 @@ def nodered():
         #播放
         page.get(url:=data["links"][new_index])
         # #全屏
-        # 
+        page.set.window.full()
         
         # TODO 检查是否有其他标签页，如果有，则关闭
         
@@ -106,7 +106,7 @@ def nodered():
         #播放
         page.get(url:=data["links"][new_index])
         #全屏
-        
+        page.set.window.full()
 
         # TODO 检查是否有其他标签页，如果有，则关闭
     
@@ -114,6 +114,7 @@ def nodered():
     #返回主页面
     elif action == 'close':
         page=WebPage()
+        page.set.window.full()
         page.new_tab('http://192.168.2.168:8096/web/index.html#!/tv.html?topParentId=54e2f5a65fcc052ea18327d63079be5a')
         page.get_tab(2).close()
         #全屏
