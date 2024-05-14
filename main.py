@@ -1,3 +1,11 @@
+from DrissionPage import ChromiumPage
+
+page = ChromiumPage()
+page.get('http://DrissionPage.cn')
+
+
+
+
 # import json
 # from DrissionPage import WebPage
 # from flask import Flask, jsonify, redirect, request
@@ -191,7 +199,3 @@
 
 
 
-from DrissionPage import ChromiumPage
-
-page = ChromiumPage()
-page.get('http://DrissionPage.cn')
