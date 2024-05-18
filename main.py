@@ -71,7 +71,7 @@ def get_webpage():
     :return: 初始化好的WebPage对象。
     """
     page = WebPage()
-    # page.set.window.full()
+    page.set.window.full()
     return page
 
 def is_pinyin_match(target, keyword):
