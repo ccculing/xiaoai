@@ -1,11 +1,5 @@
-# 获取当前 PowerShell 脚本所在的目录
-$scriptDirectory = $PSScriptRoot
+# 设置执行策略以允许脚本运行（仅对当前会话有效）
+Set-ExecutionPolicy Bypass -Scope Process -Force
 
-# 构建 Python 脚本的完整路径
-$pythonScriptPath = Join-Path -Path $scriptDirectory -ChildPath "main.py"
-
-# 使用 Python 执行该脚本
-& python $pythonScriptPath
-
-# 保持 PowerShell 窗口打开，以便查看输出（如果需要）
-Read-Host -Prompt "Press Enter to exit"
+# 调用Python执行指定的脚本
+& python "D:\xiaoai\main.py"
