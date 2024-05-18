@@ -23,7 +23,7 @@ animation_mapping = {
     '佩奇': 'f48e0db58cd86791adf93793b8b32d84',
     '布鲁伊': 'a4b857c56110e34967f8055f5d8414f5',
     '海绵宝宝': 'cdec2cca5b2bcb0e5702c26bbfaa2644',
-    '朵拉': 'ef588852f2ac1de9e3aaedfcdae630c8',,
+    '朵拉': 'ef588852f2ac1de9e3aaedfcdae630c8',
     '爱探险的朵拉': 'ef588852f2ac1de9e3aaedfcdae630c8',
     '班班和莉莉': '84f29f1a21ce3ead29b1fd5cb4738c0e',
     '瑞奇宝宝': 'be6c2fa10a0dc480a05f005bb5ec3bba',
