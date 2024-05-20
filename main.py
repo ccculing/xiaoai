@@ -3,6 +3,7 @@ from DrissionPage import WebPage
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import pabili
+from DrissionPage.common import Keys
 
 # 初始化Flask应用，并启用跨域资源共享CORS
 app = Flask(__name__)
@@ -68,8 +69,12 @@ def nodered():
         page.new_tab('http://192.168.2.168:8096/web/index.html#!/tv.html?topParentId=54e2f5a65fcc052ea18327d63079be5a')
         page.get_tab(2).close()
 
+    elif action == 'pause':
+        # 暂停播放
+        page = get_webpage()
+        page.actions.type(Keys.SPACE)
+
     elif action == 'cartoon' and url:
-        # 根据拼音搜索并播放动画
         play_animation(url)
 
     return jsonify({"msg": True})
