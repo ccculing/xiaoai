@@ -44,7 +44,7 @@ def nodered():
 
     if action == 'current':
         # 处理当前搜索请求
-        keyword = keyword[len("搜索"):]
+        # keyword = keyword[len("搜索"):]
         results = pabili.get_search(keyword, 1)
         json_results["links"] = results
         save_json(json_results)
